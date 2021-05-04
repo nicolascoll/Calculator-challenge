@@ -26,5 +26,5 @@ def Calculator(str):
         if char == '/':
             splitted = str.split("/")
             return Calculator(splitted[0]) / Calculator(splitted[1])
-        else
+        else:
             return str
