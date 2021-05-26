@@ -1,5 +1,6 @@
 def Calculator(str):
     for char in str:
+        # Para arreglar: con otra funcion dentro, recorrer el string, si hay ( o + o - o * o / devolver True, sino devolver False, y si esta funcion devuelve False, que Calculator(str) devuelva str
         if char == '+':
             splitted = str.split("+")
             return Calculator(splitted[0]) + Calculator(splitted[1])
