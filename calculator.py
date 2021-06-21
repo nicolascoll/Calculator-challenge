@@ -1,6 +1,9 @@
 def Calculator(str):
+    checker = False
     for char in str:
-        # Para arreglar: con otra funcion dentro, recorrer el string, si hay ( o + o - o * o / devolver True, sino devolver False, y si esta funcion devuelve False, que Calculator(str) devuelva str
+        if checker == False:
+            if char == '+' or char == '-' or char == '(' or char == '*' or char == '/':
+                checker = True
         if char == '+':
             splitted = str.split("+")
             return Calculator(splitted[0]) + Calculator(splitted[1])
@@ -27,5 +30,5 @@ def Calculator(str):
         if char == '/':
             splitted = str.split("/")
             return Calculator(splitted[0]) / Calculator(splitted[1])
-        else:
+        elif char == str[-1] and checker == False:# Not sure if its gonna compare to the value or the reference
             return str
