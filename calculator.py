@@ -2,15 +2,9 @@ def Calculator(str):
     checker = False
     for char in str:
         if checker == False:
-            if char == '+' or char == '-' or char == '(' or char == '*' or char == '/':
+             if char in ('+','-','(','*','/'):
                 checker = True
-        if char == '+':
-            splitted = str.split("+")
-            return Calculator(splitted[0]) + Calculator(splitted[1])
-        if char == '-':
-            splitted = str.split("-")
-            return Calculator(splitted[0]) - Calculator(splitted[1])
-        if char == '(':
+         if char == '(':
             for char in str[str.find(char) : len(char) - 1 : 1] :
                 tmp = 0
                 if char == '(':
@@ -22,8 +16,14 @@ def Calculator(str):
                     count += 1
                     if count == tmp:
                         substrEnd = str.find(char)
-                        return str[substrStart:substrEnd]                        
-            # Algoritmo acá: fijarse cuantos "(" hay hasta que se termina el string, guardar ese numero "n" y cortar el string al n-esimo "(" que aparezca, retornar Calculator(strNueva) siendo strNueva el pedazo recien cortado
+                        return Calculator(str[substrStart:substrEnd]) 
+        if char == '+':
+            splitted = str.split("+")
+            return Calculator(splitted[0]) + Calculator(splitted[1])
+        if char == '-':
+            splitted = str.split("-")
+            return Calculator(splitted[0]) - Calculator(splitted[1])
+       
         if char == '*':
             splitted = str.split("*")
             return Calculator(splitted[0]) * Calculator(splitted[1])
