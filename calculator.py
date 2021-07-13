@@ -4,7 +4,7 @@ def Calculator(str):
         if checker == False:
              if char in ('+','-','(','*','/'):
                 checker = True
-         if char == '(':
+        if char == '(':
             for char in str[str.find(char) : len(char) - 1 : 1] :
                 tmp = 0
                 if char == '(':
