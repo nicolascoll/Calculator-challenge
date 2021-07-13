@@ -17,7 +17,7 @@ def Calculator(str):
                     count += 1
                     if count == tmp:
                         substrEnd = str.find(substrChar)
-                        return Calculator(str[substrStart:substrEnd]) 
+                        return Calculator(str[substrStart:substrEnd])str[substrEnd+1]Calculator(str[substrEnd+2:]) #Buggy here
         if char == '+':
             splitted = str.split("+")
             return Calculator(splitted[0]) + Calculator(splitted[1])
