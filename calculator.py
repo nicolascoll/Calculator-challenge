@@ -5,7 +5,8 @@ def Calculator(str):
              if char in ('+','-','(','*','/'):
                 checker = True
         if char == '(':
-            for char in str[str.find(char) : len(char) - 1 : 1] :
+            firstbracketindex = str.find(char)
+            for char in str[firstbracketindex : len(str) - 1 : 1] :
                 tmp = 0
                 if char == '(':
                     tmp += 1
