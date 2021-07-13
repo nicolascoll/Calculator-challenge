@@ -6,14 +6,14 @@ def Calculator(str):
                 checker = True
         if char == '(':
             firstbracketindex = str.find(char)
-            for char in str[firstbracketindex : len(str) - 1 : 1] :
-                tmp = 0
-                if char == '(':
+            tmp = 0
+            for substrChar in str[firstbracketindex : len(str) - 1 : 1] : 
+                if substrChar == '(':
                     tmp += 1
             substrStart = str.find(char)
-            for char in str[str.find(char) : len(char) - 1 : 1] :
-                count = 0 
-                if char == ')':
+            count = 0 
+            for substrChar in str[str.find(char) : len(str) - 1 : 1] :
+                if substrChar == ')':
                     count += 1
                     if count == tmp:
                         substrEnd = str.find(char)
