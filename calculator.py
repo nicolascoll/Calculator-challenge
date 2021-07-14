@@ -5,14 +5,13 @@ def Calculator(str):
              if char in ('+','-','(','*','/'):
                 checker = True
         if char == '(':
-            firstbracketindex = str.find(char)
+            substrStart = str.find(char)
             tmp = 0
-            for substrChar in str[firstbracketindex : len(str) : 1] :     #Dont understand why it should be len(str) instead of len(str)-1
+            for substrChar in str[substrStart : len(str) : 1] :     #Dont understand why it should be len(str) instead of len(str)-1
                 if substrChar == '(':
                     tmp += 1
-            substrStart = str.find(char)
             count = 0 
-            for substrChar in str[str.find(char) : len(str) : 1] :     #Dont understand why it should be len(str) instead of len(str)-1
+            for substrChar in str[substrStart : len(str) : 1] :     #Dont understand why it should be len(str) instead of len(str)-1
                 if substrChar == ')':
                     count += 1
                     if count == tmp:
