@@ -18,17 +18,17 @@ def Calculator(str):
                         substrEnd = str.find(substrChar)
                         return Calculator(str[substrStart+1:substrEnd]) #Dont understand why it should be substrEnd instead of substrEnd-1
         if char == '+':
-            splitted = str.split("+")
+            splitted = str.split("+",1)
             return Calculator(splitted[0]) + Calculator(splitted[1])
         if char == '-':
-            splitted = str.split("-")
+            splitted = str.split("-",1)
             return Calculator(splitted[0]) - Calculator(splitted[1])
        
         if char == '*':
-            splitted = str.split("*")
+            splitted = str.split("*",1)
             return Calculator(splitted[0]) * Calculator(splitted[1])
         if char == '/':
-            splitted = str.split("/")
+            splitted = str.split("/",1)
             return Calculator(splitted[0]) / Calculator(splitted[1])
         elif char == str[-1] and checker == False:
             return float(str)
