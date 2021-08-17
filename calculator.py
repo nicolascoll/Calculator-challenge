@@ -26,12 +26,12 @@ def Calculator(string):
                     subString += strChar
                 else:
                     substrEnd = strChar
-                    return -Calculator(string[1:substrEnd])
-                    
+                    substrEndIndex = string.index(strChar)
+                    return -Calculator(string[1:substrEnd])+strChar+Calculator(string[substrEndIndex+1:])
         else:
             splitted = string.split("-",1)
             checker = True
-        return Calculator(splitted[0]) - Calculator(splitted[1])
+            return Calculator(splitted[0]) - Calculator(splitted[1])
     if '*' in string:
         splitted = string.split("*",1)
         checker = True
